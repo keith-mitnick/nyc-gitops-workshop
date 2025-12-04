@@ -7,11 +7,12 @@
 # Then add that secret to .github/workflows/workflow.yml as an env variable.
 # The secret name in the YAML file must match the secret name in GitHub Actions secrets.
 
-name: Workstations
+name: Engineering
 policies:
   - path: ../lib/macos/policies/macos-device-health.policies.yml
   - path: ../lib/windows/policies/windows-device-health.policies.yml
-  - path: ../lib/linux/policies/linux-device-health.policies.yml
+  - path: ../lib/linux/policies/linux-device-health.policies.yml   
+  - path: ../lib/windows/policies/all-windoes-updates-installed.policies.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
@@ -34,6 +35,13 @@ controls:
     - path: ../lib/macos/scripts/set-timezone.script.sh
     - path: ../lib/windows/scripts/set-wallpaper.ps1
 team_settings:
+  webhook_settings:
+    failing_policies_webhook: true
+    destination_url: https://webhook.site/1b3a370a-6b4f-4182-987c-2ba6e7aa7aff
+    host_batch_size: 0
+    policy_ids:
+      - 1
+      - 2
   secrets:
     - secret: "$FLEET_ENGINEERING_ENROLL_SECRET"
   features:
