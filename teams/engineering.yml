@@ -36,7 +36,7 @@ controls:
     - path: ../lib/windows/scripts/set-wallpaper.ps1
 team_settings:
   webhook_settings:
-    failing_policies_webhook: true
+    enable_failing_policies_webhook: true
     destination_url: https://webhook.site/1b3a370a-6b4f-4182-987c-2ba6e7aa7aff
     host_batch_size: 0
     policy_ids:
