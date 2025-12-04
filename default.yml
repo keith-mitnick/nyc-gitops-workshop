@@ -23,7 +23,7 @@ org_settings:
   webhook_settings:
     activities_webhook:
       enable_activities_webhook: true
-      destination_url: webhook.site https://webhook.site/1b3a370a-6b4f-4182-987c-2ba6e7aa7aff
+      destination_url: https://webhook.site/1b3a370a-6b4f-4182-987c-2ba6e7aa7aff
   secrets:
     - secret: "$FLEET_GLOBAL_ENROLL_SECRET"
   features:
